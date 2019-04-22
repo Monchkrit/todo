@@ -17,7 +17,7 @@
 
       $.each(data, function(index, task) {
         var checkedStatus = task.done ? "checked" : "";
-        var liElement = '<li><div class="view"><input class="toggle" type="checkbox"' + checkedStatus + " data-id'" + task.id + "'" + '><label>' + task.title + '</label></div></li>';
+        var liElement = '<li><div class="view"><input class="toggle" type="checkbox" ' + checkedStatus + " data-id'" + task.id + "' " + ' ><label>' + task.title + '</label></div></li>';
         htmlString += liElement;
 
         console.log(liElement);
@@ -26,7 +26,7 @@
       ulTodos.html(htmlString);
 
       $('.toggle').change(function(e) {
-        var itemId = $(e.target).data("data-id");
+        var itemId = $(e.target).data("id");
         console.log(itemId);
       });
 
