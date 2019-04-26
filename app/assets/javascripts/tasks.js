@@ -23,14 +23,14 @@ $(function () {
         task: {
           done: doneValue
         }
-    
-      })
 
-      (function (data) {
-        console.log("Successfully Toggled");
-          }
-      ); 
-      };
+      }).done(function (data) {
+        var liHtml = taskHtml(data);
+        var $li = $("#listItem-" + data.id);
+        $li.replaceWith(liHtml);
+        $('.toggle').change(toggleTask);
+      } ); 
+    }
 
 
     $.get("/tasks", function( data ) {
